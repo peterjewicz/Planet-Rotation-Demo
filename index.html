@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>A Swiftly Rotating Planet</title>
+    </head>
+    <style>
+        body{
+            background-image: url('stars.jpg');
+            background-size: cover;
+        }
+        .contentWrapper{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .planetWrapper{
+            transform: rotate(45deg);
+        }
+        .planet{
+            animation: rotate 5s linear infinite;
+        }
+        .cometWrapper{
+            position:absolute;
+            top: 30px;
+            left: 65px;
+        }
+        .comet{
+            animation: orbit 5s linear infinite;
+        }
+        @keyframes rotate {
+            from {transform: rotate(0deg)}
+            to {transform: rotate(360deg)}
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(250px)}
+            to   { transform: rotate(360deg) translateX(250px)  }
+        }
+    </style>
+    <body>
+        <div class="contentWrapper">
+            <div class="planetWrapper">
+                <img class="planet" src="uranusPlanet.png" alt="Uranus" />
+            </div>
+            <div class="cometWrapper">
+                <img class="comet" src="comet.png" alt="comet" width="10px;"/>
+            </div>
+        </div>
+    </body>
+</html>
